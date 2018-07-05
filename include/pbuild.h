@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** pbuild.h
-** File description:
-** Header file for building functions prototypes
-*/
-
 #ifndef __MATCHSTICK_PBUILD_H__
 #define __MATCHSTICK_PBUILD_H__
 

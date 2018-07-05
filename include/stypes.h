@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** stypes.h
-** File description:
-** Header file for simple typedefs
-*/
-
 #ifndef __MATCHSTICK_STYPES_H__
 #define __MATCHSTICK_STYPES_H__
 

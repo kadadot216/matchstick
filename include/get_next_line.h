@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** get_next_line.h
-** File description:
-** Header file for get_next_line.c
-*/
-
 #ifndef __GET_NEXT_LINE_H__
 #define __GET_NEXT_LINE_H__
 

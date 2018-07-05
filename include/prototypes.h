@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** prototypes.h
-** File description:
-** Header file for function prototypes
-*/
-
 #ifndef __MATCHSTICK_PROTO_H__
 #define __MATCHSTICK_PROTO_H__
 

@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** my_put_nbr.c
-** File description:
-** Displays the number given as a parameter.
-*/
-
 #include "my.h"
 
 int	my_put_nbr(int nb)

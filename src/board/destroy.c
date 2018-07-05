@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** destroy.c
-** File description:
-** Game board destruction related functions
-*/
-
 #include <stdlib.h>
 #include "types.h"
 #include "helpers.h"
