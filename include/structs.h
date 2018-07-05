@@ -8,12 +8,15 @@
 #ifndef __MATCHSTICK_STRUCTS_H__
 #define __MATCHSTICK_STRUCTS_H__
 
+#include "stypes.h"
+
 struct	game_board_s {
-	unsigned int	total_sticks;
-	unsigned int	max_lines;
-	unsigned int	*msticks_atl;
-	unsigned int	*rsticks_atl;
-	char	**display;
+	char		**display;
+	uint_t		*maxsticks_atl;
+	uint_t		*remsticks_atl;
+	uint_t		max_lines;
+	uint_t		max_width;
+	board_status_t	status;
 };
 
 #endif

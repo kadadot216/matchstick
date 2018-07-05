@@ -23,6 +23,7 @@ LIB_HDS		=	$(addprefix $(LIB_HDPATH)/, $(LIB_HDSRC))
 
 LIB_SRCS	=	my_putchar.c		\
 			my_putcharx.c		\
+			my_puterror.c		\
 			my_putstr.c		\
 			my_strlen.c		\
 			my_getnbr.c		\
@@ -44,11 +45,10 @@ CFLAGS		+=	-I$(HDPATH)
 NAME		=	matchstick
 LDFLAGS		=	-L./lib
 LIBFLAG		=	-lmy
-SRC		=	src/print_game_board.c		\
-			src/print_updated_game_board.c	\
-			src/sticks.c	\
-			src/read_player_move_and_print_updated_board_game.c	\
-			src/display/display_board.c
+SRC		=	src/board/build.c		\
+			src/board/destroy.c		\
+			src/display/display_board.c	\
+			src/parsing.c
 			
 MAIN		=	src/main.c
 

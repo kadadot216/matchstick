@@ -5,21 +5,27 @@
 ** Displays the matchstick boards
 */
 
+#include <stdlib.h>
+#include "types.h"
 #include "my.h"
 
-void	display_board(char **board, int height, int width)
+int	display_board(game_board_t *board)
 {
-	int	i = 0;
+	uint_t	j = 0;
 
-	my_putcharx('*', (width + 2));
+	if (board == NULL) {
+		return (-1);
+	}
+	my_putcharx('*', (board->max_width + 2));
 	my_putchar('\n');
-	while (i < height) {
+	while (j < board->max_lines) {
 		my_putchar('*');
-		my_putstr(board[i]);
+		my_putstr(board->display[j]);
 		my_putchar('*');
 		my_putchar('\n');
-		i++;
+		j++;
 	}
-	my_putcharx('*', (width + 2));
+	my_putcharx('*', (board->max_width + 2));
 	my_putchar('\n');
+	return (0);
 }

@@ -11,6 +11,7 @@
 void	my_putchar(char c);
 void	my_putcharx(char c, int times);
 void	my_putstr(char *str);
+void	my_puterror(char *strerr);
 void	my_putstrtab(char **tab);
 int	my_strtablen(char **tab);
 char	*my_strdup(char const *src);
