@@ -7,45 +7,18 @@
 
 #include <stdlib.h>
 #include "types.h"
+#include "helpers.h"
 #include "my.h"
 
-uint_t	*ms_free_uinttab(uint_t *tab, uint_t size)
+game_board_t	*unset_board(game_board_t *b)
 {
-	uint_t	i = 0;
-
-	while (i < size) {
-		tab[i] = 0;
-		i++;
-	}
-	free(tab);
-	tab = NULL;
-	return (tab);
-}
-
-char	**ms_free_strtab(char **display, uint_t height, uint_t width)
-{
-	int	j = 0;
-
-	while (j < height) {
-		my_memset(display[j], '\0', width);
-		free(display[j]);
-		display[j] = NULL;
-		j++;
-	}
-	free(display);
-	display = NULL;
-	return (display);
-}
-
-game_board_t	*unset_board(game_board_t *board)
-{
-	board->maxsticks_atl = ms_free_uinttab(board->maxsticks_atl, board->max_lines);
-	board->remsticks_atl = ms_free_uinttab(board->remsticks_atl, board->max_lines);
-	board->display = ms_free_strtab(board->display, board->max_lines, board->max_width);
-	board->max_lines = 0;
-	board->max_width = 0;
-	board->status = 0;
-	free(board);
-	board = NULL;
-	return (board);
+	b->maxsticks_atl = ms_free_uinttab(b->maxsticks_atl, b->max_lines);
+	b->remsticks_atl = ms_free_uinttab(b->remsticks_atl, b->max_lines);
+	b->display = ms_free_strtab(b->display, b->max_lines, b->max_width);
+	b->max_lines = 0;
+	b->max_width = 0;
+	b->status = 0;
+	free(b);
+	b = NULL;
+	return (b);
 }

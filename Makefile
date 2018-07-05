@@ -25,15 +25,11 @@ LIB_SRCS	=	my_putchar.c		\
 			my_putcharx.c		\
 			my_puterror.c		\
 			my_putstr.c		\
-			my_strlen.c		\
 			my_getnbr.c		\
-			my_strdup.c		\
 			my_strtablen.c		\
 			my_str_isnum.c		\
-			my_strtabdup.c		\
 			my_memset.c		\
-			get_next_line.c		\
-			my_putstrtab.c
+			get_next_line.c
 
 LIB_SRC		=	$(addprefix $(LIB_PATH)/, $(LIB_SRCS))
 LIB_OBJ		=	$(LIB_SRC:.c=.o)
@@ -46,7 +42,12 @@ NAME		=	matchstick
 LDFLAGS		=	-L./lib
 LIBFLAG		=	-lmy
 SRC		=	src/board/build.c		\
+			src/board/build_map.c		\
+			src/board/build_sticks.c	\
 			src/board/destroy.c		\
+			src/helpers/ms_free_strtab.c	\
+			src/helpers/ms_free_uinttab.c	\
+			src/helpers/ms_uinttabcpy.c	\
 			src/display/display_board.c	\
 			src/parsing.c
 			
