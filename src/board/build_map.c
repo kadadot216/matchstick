@@ -31,7 +31,7 @@ static void	map_board_line(char *line, uint_t width, uint_t nb_sticks)
 
 game_board_t	*map_board_display(game_board_t *b)
 {
-	int	j = 0;
+	uint_t	j = 0;
 
 	if (b == NULL || b->maxsticks_atl == NULL) {
 		my_puterror("Error during display creation.\n");

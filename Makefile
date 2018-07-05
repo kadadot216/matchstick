@@ -46,11 +46,14 @@ SRC		=	src/board/build.c		\
 			src/board/build_map.c		\
 			src/board/build_sticks.c	\
 			src/board/destroy.c		\
+			src/board/update.c		\
 			src/helpers/ms_free_strtab.c	\
 			src/helpers/ms_free_uinttab.c	\
 			src/helpers/ms_uinttabcpy.c	\
 			src/display/display_board.c	\
 			src/game/game_loop.c		\
+			src/game/user_prompt.c		\
+			src/game/checking.c		\
 			src/parsing.c
 			
 MAIN		=	src/main.c
