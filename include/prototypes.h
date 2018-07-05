@@ -13,5 +13,6 @@
 game_board_t	*init_board(uint_t nb_lines);
 game_board_t	*unset_board(game_board_t *board);
 void	display_board(game_board_t *board);
+void	play_game(game_board_t *board);
 
 #endif

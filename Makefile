@@ -49,6 +49,7 @@ SRC		=	src/board/build.c		\
 			src/helpers/ms_free_uinttab.c	\
 			src/helpers/ms_uinttabcpy.c	\
 			src/display/display_board.c	\
+			src/game/game_loop.c		\
 			src/parsing.c
 			
 MAIN		=	src/main.c

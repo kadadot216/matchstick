@@ -21,7 +21,11 @@ int	main(int ac, char **av)
 	}
 	nb_lines = parse_nb_lines(av);
 	board = init_board(nb_lines);
-	display_board(board);
+	if (board == NULL || board->status == ERROR) {
+		my_puterror("Error during the board setup.\n");
+		return (84);
+	}
+	play_game(board);
 	board = unset_board(board);
 	return (0);
 }
