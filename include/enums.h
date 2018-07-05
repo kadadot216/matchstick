@@ -15,4 +15,9 @@ enum	board_status_e {
 	ERROR
 };
 
+enum	game_status_e {
+	RUNNING,
+	STOPPED
+};
+
 #endif

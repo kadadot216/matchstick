@@ -5,7 +5,7 @@
 ## Makefile for my_runner
 ##
 
-CC		=	gcc
+CC		=	gcc -W -Wall -Wextra
 DBCC		=	gcc -g
 RM		=	rm -f
 
@@ -25,6 +25,7 @@ LIB_SRCS	=	my_putchar.c		\
 			my_putcharx.c		\
 			my_puterror.c		\
 			my_putstr.c		\
+			my_put_nbr.c		\
 			my_getnbr.c		\
 			my_strtablen.c		\
 			my_str_isnum.c		\

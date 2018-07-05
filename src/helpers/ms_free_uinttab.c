@@ -20,4 +20,3 @@ uint_t	*ms_free_uinttab(uint_t *tab, uint_t size)
 	tab = NULL;
 	return (tab);
 }
-

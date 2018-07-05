@@ -21,4 +21,3 @@ int	ms_uinttabcpy(uint_t *dest, uint_t *src, uint_t size)
 	}
 	return (0);
 }
-

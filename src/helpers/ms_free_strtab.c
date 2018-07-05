@@ -23,4 +23,3 @@ char	**ms_free_strtab(char **display, uint_t height, uint_t width)
 	display = NULL;
 	return (display);
 }
-
