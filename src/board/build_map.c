@@ -34,7 +34,7 @@ game_board_t	*map_board_display(game_board_t *b)
 	uint_t	j = 0;
 
 	if (b == NULL || b->maxsticks_atl == NULL) {
-		my_puterror("Error during display creation.\n");
+		my_putstr_fd(2, "Error during display creation.\n");
 		return (NULL);
 	}
 	b->display = malloc(sizeof(char *) * (b->max_lines + 1));

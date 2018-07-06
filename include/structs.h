@@ -14,6 +14,7 @@ struct	game_board_s {
 	char		**display;
 	uint_t		*maxsticks_atl;
 	uint_t		*remsticks_atl;
+	uint_t		stick_limit;
 	uint_t		max_lines;
 	uint_t		max_width;
 	board_status_t	status;

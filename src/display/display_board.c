@@ -16,16 +16,16 @@ int	display_board(game_board_t *board)
 	if (board == NULL) {
 		return (-1);
 	}
-	my_putcharx('*', (board->max_width + 2));
-	my_putchar('\n');
+	my_putcharx_fd(1, '*', (board->max_width + 2));
+	my_putchar_fd(1, '\n');
 	while (j < board->max_lines) {
-		my_putchar('*');
-		my_putstr(board->display[j]);
-		my_putchar('*');
-		my_putchar('\n');
+		my_putchar_fd(1, '*');
+		my_putstr_fd(1, board->display[j]);
+		my_putchar_fd(1, '*');
+		my_putchar_fd(1, '\n');
 		j++;
 	}
-	my_putcharx('*', (board->max_width + 2));
-	my_putchar('\n');
+	my_putcharx_fd(1, '*', (board->max_width + 2));
+	my_putstr_fd(1, "\n\n");
 	return (0);
 }

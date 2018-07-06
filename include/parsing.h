@@ -5,4 +5,4 @@
 ** parsing related functions
 */
 
-int	parse_nb_lines(char **av);
+int	parse_value(char *arg);

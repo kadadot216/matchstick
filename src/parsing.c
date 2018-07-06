@@ -9,16 +9,14 @@
 #include "defs.h"
 #include "my.h"
 
-int	parse_nb_lines(char **av)
+int	parse_value(char *arg)
 {
-	char	*arg = NULL;
-	int	nb_lines = 0;
+	int	value = -1;
 
-	if (av[1] == NULL) {
-		nb_lines = NB_LINES_DEFAULT;
+	if (arg == NULL || !my_str_isnum(arg)) {
+		return (-1);
 	} else {
-		arg = av[1];
-		nb_lines = my_getnbr(arg);
+		value = my_getnbr(arg);
 	}
-	return (nb_lines);
+	return (value);
 }

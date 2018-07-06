@@ -21,11 +21,10 @@ LIB_HDSRC	=	my.h	\
 
 LIB_HDS		=	$(addprefix $(LIB_HDPATH)/, $(LIB_HDSRC))
 
-LIB_SRCS	=	my_putchar.c		\
-			my_putcharx.c		\
-			my_puterror.c		\
-			my_putstr.c		\
-			my_put_nbr.c		\
+LIB_SRCS	=	my_putchar_fd.c		\
+			my_putcharx_fd.c	\
+			my_putstr_fd.c		\
+			my_put_nbr_fd.c		\
 			my_getnbr.c		\
 			my_strtablen.c		\
 			my_str_isnum.c		\

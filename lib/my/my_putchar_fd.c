@@ -7,7 +7,7 @@
 
 #include <unistd.h>
 
-void	my_putchar(char c)
+void	my_putchar_fd(int fd, char c)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }
