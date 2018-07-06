@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 	game_board_t	*board = NULL;
 	uint_t	nb_lines = 0;
 
-	if (ac > 2) {
+	if (ac > 3 || ac < 3) {
 		return (84);
 	}
 	nb_lines = parse_nb_lines(av);

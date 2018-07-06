@@ -19,4 +19,9 @@ struct	game_board_s {
 	board_status_t	status;
 };
 
+struct	p_choice_s {
+	uint_t		line;
+	uint_t		nbsticks;
+};
+
 #endif

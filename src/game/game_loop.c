@@ -10,19 +10,40 @@
 #include "user_prompt.h"
 #include "checking.h"
 #include "update.h"
+#include "defs.h"
 
+#include "my.h"
 
-void	play_turn(game_board_t *b)
+void	print_error_sticks_oob(int upper_bound)
 {
-	uint_t	sel_line = 0;
-	uint_t	sel_nbsticks = 0;
+	my_putstr("Error: you cannot remove more than ");
+	my_put_nbr(upper_bound);
+	my_putstr(" matches per turn\n");
+}
 
-	while (sel_nbsticks == 0) {
-		sel_line = (get_input("Line: ", b->max_lines) - 1);
-		sel_nbsticks = get_input("Stick: ", b->remsticks_atl[sel_line]);
+void	print_error_line_oor(void)
+{
+	my_putstr("Error: this line is out of range\n");
+}
+
+//
+
+void	get_input_choice(p_choice_t *c, game_board_t *b)
+{
+	c->line = (get_input("Line: ", b->max_lines,
+		print_error_line_oor) - 1);
+	c->nbsticks = get_input("Stick: ", b->remsticks_atl[c->line],
+			print_error_sticks_oob);
+}
+
+void	play_turn(game_board_t *board)
+{
+	p_choice_t	choice = {0, 0};
+
+	while (choice.nbsticks == 0) {
+		get_input_choice(&choice, board);
 	}
-
-	update_board_with(b, sel_line, sel_nbsticks);
+	update_board_with(board, &choice);
 }
 
 int	check_for_win_condition(void)

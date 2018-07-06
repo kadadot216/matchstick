@@ -10,6 +10,6 @@
 
 #include "types.h"
 
-void	update_board_with(game_board_t *board, uint_t line, uint_t nbsticks);
+void	update_board_with(game_board_t *board, p_choice_t *choice);
 
 #endif

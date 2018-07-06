@@ -10,6 +10,6 @@
 
 #include "stypes.h"
 
-uint_t	get_input(char *msg, uint_t upper_limit);
+uint_t	get_input(char *msg, uint_t upper_limit, void (*print_error)());
 
 #endif

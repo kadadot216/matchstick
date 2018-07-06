@@ -27,8 +27,8 @@ void	remove_from_display(char *display_line, uint_t nbsticks)
 	}
 }
 
-void	update_board_with(game_board_t *board, uint_t line, uint_t nbsticks)
+void	update_board_with(game_board_t *b, p_choice_t *c)
 {
-	remove_sticks(&board->remsticks_atl[line], nbsticks);
-	remove_from_display(board->display[line], nbsticks);
+	remove_sticks(&b->remsticks_atl[c->line], c->nbsticks);
+	remove_from_display(b->display[c->line], c->nbsticks);
 }
