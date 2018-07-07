@@ -53,6 +53,7 @@ SRC		=	src/board/build.c		\
 			src/game/game_loop.c		\
 			src/game/user_prompt.c		\
 			src/game/checking.c		\
+			src/game/print_err_functs.c	\
 			src/parsing.c
 			
 MAIN		=	src/main.c

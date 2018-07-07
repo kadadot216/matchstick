@@ -12,17 +12,16 @@
 
 struct	game_board_s {
 	char		**display;
-	uint_t		*maxsticks_atl;
-	uint_t		*remsticks_atl;
-	uint_t		stick_limit;
+	uint_t		*remmatches_atl;
+	uint_t		match_limit;
 	uint_t		max_lines;
 	uint_t		max_width;
 	board_status_t	status;
 };
 
 struct	p_choice_s {
-	uint_t		line;
-	uint_t		nbsticks;
+	int		line;
+	int		matches;
 };
 
 #endif

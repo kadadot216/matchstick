@@ -23,12 +23,9 @@ static void	compute_nb_sticks(uint_t *sticks_tab, uint_t max_lines)
 
 game_board_t	*fill_board_sticks(game_board_t *board)
 {
-	board->maxsticks_atl = malloc(sizeof(uint_t) * board->max_lines);
-	board->remsticks_atl = malloc(sizeof(uint_t) * board->max_lines);
-	compute_nb_sticks(board->maxsticks_atl, board->max_lines);
-	ms_uinttabcpy(board->remsticks_atl, board->maxsticks_atl,
-		board->max_lines);
-	board->max_width = board->maxsticks_atl[board->max_lines - 1];
+	board->remmatches_atl = malloc(sizeof(uint_t) * board->max_lines);
+	compute_nb_sticks(board->remmatches_atl, board->max_lines);
+	board->max_width = board->remmatches_atl[board->max_lines - 1];
 	board->status = SET;
 	return (board);
 }

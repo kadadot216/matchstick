@@ -9,12 +9,12 @@
 
 #include "my.h"
 
-void	remove_sticks(uint_t *remsticks, uint_t nbsticks)
+void	remove_sticks(uint_t *remmatches, uint_t matches)
 {
-	*remsticks -= nbsticks;
+	*remmatches -= matches;
 }
 
-void	remove_from_display(char *display_line, uint_t nbsticks)
+void	remove_from_display(char *display_line, uint_t matches)
 {
 	uint_t	i = 0;
 	uint_t	removed = 0;
@@ -22,17 +22,17 @@ void	remove_from_display(char *display_line, uint_t nbsticks)
 	while (display_line[i] == ' ' && display_line[i] != '\0') {
 		i++;
 	}
-	while (removed < nbsticks) {
+	while (removed < matches) {
 		display_line[i] = ' ';
 		i++;
 		removed++;
 	}
 }
 
-void	print_updated_board(uint_t nbsticks, uint_t line)
+void	print_updated_board(uint_t matches, uint_t line)
 {
 	my_putstr_fd(1, "Player removed ");
-	my_put_nbr_fd(1, nbsticks);
+	my_put_nbr_fd(1, matches);
 	my_putstr_fd(1, " from line ");
 	my_put_nbr_fd(1, line);
 	my_putstr_fd(1, "\n");
@@ -40,7 +40,7 @@ void	print_updated_board(uint_t nbsticks, uint_t line)
 
 void	update_board_with(game_board_t *b, p_choice_t *c)
 {
-	remove_sticks(&b->remsticks_atl[c->line], c->nbsticks);
-	remove_from_display(b->display[c->line], c->nbsticks);
-	print_updated_board(c->nbsticks, c->line);
+	remove_sticks(&b->remmatches_atl[c->line], c->matches);
+	remove_from_display(b->display[c->line], c->matches);
+	print_updated_board(c->matches, c->line);
 }

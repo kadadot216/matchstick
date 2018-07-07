@@ -33,7 +33,7 @@ game_board_t	*map_board_display(game_board_t *b)
 {
 	uint_t	j = 0;
 
-	if (b == NULL || b->maxsticks_atl == NULL) {
+	if (b == NULL || b->remmatches_atl == NULL) {
 		my_putstr_fd(2, "Error during display creation.\n");
 		return (NULL);
 	}
@@ -41,7 +41,7 @@ game_board_t	*map_board_display(game_board_t *b)
 	while (j < b->max_lines) {
 		b->display[j] = malloc(sizeof(char) * b->max_width);
 		map_board_line(b->display[j], b->max_width,
-			b->maxsticks_atl[j]);
+			b->remmatches_atl[j]);
 		j++;
 	}
 	b->display[j] = NULL;
