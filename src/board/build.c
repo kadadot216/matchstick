@@ -29,7 +29,7 @@ game_board_t	*init_board(int nb_lines, int match_limit)
 {
 	game_board_t	*board = NULL;	
 
-	if (nb_lines < 1) {
+	if (nb_lines < 1 || match_limit < 1) {
 		my_putstr_fd(2, "Error: wrong nb of lines\n");
 		return (NULL);
 	}

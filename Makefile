@@ -50,11 +50,13 @@ SRC		=	src/board/build.c		\
 			src/helpers/ms_free_uinttab.c	\
 			src/helpers/ms_uinttabcpy.c	\
 			src/display/display_board.c	\
+			src/display/game_messages.c	\
 			src/game/game_loop.c		\
 			src/game/user_prompt.c		\
 			src/game/checking.c		\
 			src/game/print_err_functs.c	\
 			src/game/value_checks.c		\
+			src/ai/strategy.c		\
 			src/parsing.c
 			
 MAIN		=	src/main.c
