@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** ms_free_uinttab.c
-** File description:
-** Unset and free an unsigned int tab
-*/
-
 #include <stdlib.h>
 #include "stypes.h"
 

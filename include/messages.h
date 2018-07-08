@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** messages.h
-** File description:
-** Header file for game_messages.c
-*/
-
 #ifndef __MATCHSTICK_MESSAGES_H__
 #define __MATCHSTICK_MESSAGES_H__
 

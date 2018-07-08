@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** build.c
-** File description:
-** Board building related functions
-*/
-
 #include <stdlib.h>
 #include "my.h"
 #include "defs.h"

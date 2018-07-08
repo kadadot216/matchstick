@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** game_loop.c
-** File description:
-** Game loop routine
-*/
-
 #include "types.h"
 #include "prototypes.h"
 #include "user_prompt.h"

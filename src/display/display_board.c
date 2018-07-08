@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** display_board.c
-** File description:
-** Displays the matchstick boards
-*/
-
 #include <stdlib.h>
 #include "types.h"
 #include "my.h"

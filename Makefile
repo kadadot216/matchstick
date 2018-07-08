@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for my_runner
-##
-
 CC		=	gcc -W -Wall -Wextra
 DBCC		=	gcc -g
 RM		=	rm -f
@@ -105,7 +98,7 @@ re: clean fclean $(NAME)
 clean:
 	$(RM) $(OBJ)
 
-fclean:	clean
+fclean:	clean libfclean
 	$(RM) $(HDTGR)
 	$(RM) $(LIBTGR)
 	$(RM) $(NAME)

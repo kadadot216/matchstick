@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** build_map.c
-** File description:
-** Board's map building related functions
-*/
-
 #include <stdlib.h>
 #include "types.h"
 #include "my.h"

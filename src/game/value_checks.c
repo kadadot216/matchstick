@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** value_checks.c
-** File description:
-** Value checking related functions
-*/
-
 #include "types.h"
 #include "error_fcts.h"
 

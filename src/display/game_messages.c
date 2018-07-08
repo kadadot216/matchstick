@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** game_messages.c
-** File description:
-** Function for related game messages
-*/
-
 #include "stypes.h"
 #include "my.h"
 
@@ -28,7 +21,13 @@ void	print_updated_board(uint_t matches, uint_t line, turn_type_t type)
 	my_putstr_fd(1, " removed ");
 	my_put_nbr_fd(1, matches);
 	my_putstr_fd(1, " from line ");
-	my_put_nbr_fd(1, line);
+	my_put_nbr_fd(1, (line + 1));
 	my_putstr_fd(1, "\n");
 }
 
+void	print_help_msg(char *pname)
+{
+	my_putstr_fd(1, "Usage:\n");
+	my_putstr_fd(1, pname);
+	my_putstr_fd(1, " <total number of line> <matchsticks limit>\n");
+}

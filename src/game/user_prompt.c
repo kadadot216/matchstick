@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** user_prompt.c
-** File description:
-** Player's prompt related functions
-*/
-
 #include <stdlib.h>
 #include "types.h"
 #include "my.h"

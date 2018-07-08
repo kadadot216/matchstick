@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** error_fcts.h
-** File description:
-** Header file for print_err_functs.c
-*/
-
 #ifndef __MATCHSTICK_ERR_FUNCS_H__
 #define __MATCHSTICK_ERR_FUNCS_H__
 
