@@ -19,6 +19,7 @@ int	main(int ac, char **av)
 	int	match_limit = 0;
 
 	if (ac > 3 || ac < 3) {
+		print_help_msg(av[0]);
 		return (84);
 	}
 	nb_lines = parse_value(av[1]);
