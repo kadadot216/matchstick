@@ -33,7 +33,7 @@ int	matches_are_valid(int value, uint_t remmatches, uint_t limit)
 		return (0);
 	} else if (remmatches == 0) {
 		print_error_not_enough_matches();
-		return (0);
+		return (-1);
 	} else if (value > ((int) limit)) {
 		print_error_matches_oob(limit);
 		return (0);

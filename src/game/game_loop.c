@@ -10,30 +10,49 @@
 #include "user_prompt.h"
 #include "checking.h"
 #include "update.h"
-#include "defs.h"
-
+#include "messages.h"
+#include "ai.h"
 #include "my.h"
 
 void	get_input_choice(p_choice_t *c, game_board_t *b)
 {
-	c->line = get_line_input(b);
-	c->matches = get_matches_input(b, c->line);
+	while (c->matches <= 0) {
+		c->line = get_line_input(b);
+		c->matches = get_matches_input(b, c->line);
+	}
 }
 
-void	play_turn(game_board_t *board)
+void	play_turn(game_board_t *board, turn_type_t type)
 {
 	p_choice_t	choice = {0, 0};
 
-	get_input_choice(&choice, board);
-	update_board_with(board, &choice);
+	if (type == PLAYER) {
+		get_input_choice(&choice, board);
+	} else if (type == AI) {
+		ai_get_input_choice(&choice, board);
+	}
+	update_board_with(board, &choice, type);
 }
 
-int	check_for_win_condition(void)
+game_status_t	check_for_win_condition(game_board_t *board, uint_t turn)
 {
-	return (0);
+	uint_t	i = 0;
+
+	while (i < board->max_lines) {
+		if (board->remmatches_atl[i] != 0) {
+			return (RUNNING);
+		}
+		i++;
+	}
+	if (is_odd(turn)) {
+		return (AI_WON);
+	} else if (!is_odd(turn)) {
+		return (PLAYER_WON);
+	}
+	return (RUNNING);
 }
 
-void	play_game(game_board_t *board)
+game_status_t	play_game(game_board_t *board)
 {
 	game_status_t	status = RUNNING;	
 	uint_t	turn = 1;
@@ -42,12 +61,14 @@ void	play_game(game_board_t *board)
 		display_board(board);
 		if (is_odd(turn)) {
 			my_putstr_fd(1, "Your turn:\n");
-			play_turn(board);
+			play_turn(board, PLAYER);
 		} else {
 			my_putstr_fd(1, "AI's turn...\n");
-			play_turn(board);
+			play_turn(board, AI);
 		}
-		check_for_win_condition();
+		status = check_for_win_condition(board, turn);
 		turn++;
 	}
+	print_loss_msg(status);
+	return (status);
 }
