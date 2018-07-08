@@ -17,7 +17,7 @@ LIB_PATH	=	$(LIB_DIR)/$(LIB_NAMEDIR)
 LIB_HDPATH	=	$(LIB_PATH)/include
 
 LIB_HDSRC	=	my.h	\
-			get_next_line.h
+			gnl_simplified.h
 
 LIB_HDS		=	$(addprefix $(LIB_HDPATH)/, $(LIB_HDSRC))
 
@@ -28,8 +28,9 @@ LIB_SRCS	=	my_putchar_fd.c		\
 			my_getnbr.c		\
 			my_strtablen.c		\
 			my_str_isnum.c		\
+			my_strlen.c		\
 			my_memset.c		\
-			get_next_line.c
+			gnl_simplified.c
 
 LIB_SRC		=	$(addprefix $(LIB_PATH)/, $(LIB_SRCS))
 LIB_OBJ		=	$(LIB_SRC:.c=.o)

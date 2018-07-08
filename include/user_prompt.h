@@ -12,5 +12,6 @@
 
 int	get_line_input(game_board_t *board);
 int	get_matches_input(game_board_t *board, uint_t line);
+int	ask_number(void);
 
 #endif

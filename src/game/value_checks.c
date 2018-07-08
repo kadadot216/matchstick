@@ -18,7 +18,7 @@ void	check_for_invalid_prompt(int *value)
 int	line_is_valid(int value, uint_t max_lines)
 {
 	check_for_invalid_prompt(&value);
-	if (value > 0 && value > ((int) max_lines)) {
+	if (value == 0 || value > ((int) max_lines)) {
 		print_error_line_oor();
 		return (0);
 	}

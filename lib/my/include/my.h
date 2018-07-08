@@ -20,6 +20,7 @@ void	my_memset(char *str, char c, unsigned int size);
 int	my_str_isnum(char const *str);
 int	my_char_isnum(char const c);
 int	my_getnbr(char const *stc);
+int	my_strlen(char const *str);
 int	my_put_nbr_fd(int fd, int nb);
 char	*get_next_line(int fd);
 

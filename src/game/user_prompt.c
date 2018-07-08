@@ -10,33 +10,15 @@
 #include "my.h"
 #include "error_fcts.h"
 #include "value_checks.h"
-
-static int	get_valid_prompt(char *msg)
-{
-	int	value = 0;
-	char	*prompt = NULL;
-
-	while (prompt == NULL) {
-		my_putstr_fd(1, msg);
-		prompt = get_next_line(0);
-		if (!my_str_isnum(prompt)) {
-			print_error_invalid_prompt();
-			free(prompt);
-			prompt = NULL;
-		}
-	}
-	value = my_getnbr(prompt);
-	free(prompt);
-	prompt = NULL;
-	return (value);
-}
+#include "user_prompt.h"
 
 int	get_line_input(game_board_t *board)
 {
 	int	value = 0;
 
-	while (value <= 0) {
-		value = get_valid_prompt("Line: ");
+	while (value <= 0 || value == (-42)) {
+		my_putstr_fd(1, "Line: ");
+		value = ask_number();
 		value = line_is_valid(value, board->max_lines);
 	}
 	return ((value - 1));
@@ -46,8 +28,9 @@ int	get_matches_input(game_board_t *board, uint_t line)
 {
 	int	value = 0;
 
-	while (value == 0) {
-		value = get_valid_prompt("Matches: ");
+	while (value == 0 || value == (-42)) {
+		my_putstr_fd(1, "Matches: ");
+		value = ask_number();
 		value = matches_are_valid(value, board->remmatches_atl[line],
 			board->match_limit);
 	}
