@@ -1,17 +1,13 @@
-/*
-** EPITECH PROJECT, 2018
-** update.c
-** File description:
-** Board update related functions
-*/
-
 #include "types.h"
 
 #include "my.h"
 
-void	remove_sticks(uint_t *remmatches, uint_t matches)
+void	remove_sticks(uint_t *remmatches, int *matches)
 {
-	*remmatches -= matches;
+	if ((uint_t) *matches > *remmatches) {
+		*matches = *remmatches;
+	} 
+	*remmatches -= *matches;
 }
 
 void	remove_from_display(char *display_line, uint_t matches)
@@ -40,7 +36,7 @@ void	print_updated_board(uint_t matches, uint_t line)
 
 void	update_board_with(game_board_t *b, p_choice_t *c)
 {
-	remove_sticks(&b->remmatches_atl[c->line], c->matches);
+	remove_sticks(&b->remmatches_atl[c->line], &c->matches);
 	remove_from_display(b->display[c->line], c->matches);
 	print_updated_board(c->matches, c->line);
 }

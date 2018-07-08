@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** update.h
-** File description:
-** Header file for board updating functions
-*/
-
 #ifndef __MATCHSTICK_BOARD_UPDATE_H__
 #define __MATCHSTICK_BOARD_UPDATE_H__
 

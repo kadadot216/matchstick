@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** build_sticks.c
-** File description:
-** Board's sticks fields building related functions
-*/
-
 #include <stdlib.h>
 #include "types.h"
 #include "helpers.h"

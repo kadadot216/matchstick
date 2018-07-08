@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** ms_uinttabcpy.c
-** File description:
-** Copy an already mallocd uinttab into another
-*/
-
 #include <stdlib.h>
 #include "stypes.h"
 

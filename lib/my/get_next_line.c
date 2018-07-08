@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** get_next_line.c
-** File description:
-** Get Next Line
-*/
-
 #include <fcntl.h>
 #include <unistd.h>
 #include "get_next_line.h"
@@ -87,5 +80,4 @@ char	*get_next_line(int fd)
 			return (output);
 		}
 	}
-	return (NULL);
 }

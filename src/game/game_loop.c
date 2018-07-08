@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** game_loop.c
-** File description:
-** Game loop routine
-*/
-
 #include "types.h"
 #include "prototypes.h"
 #include "user_prompt.h"
@@ -24,9 +17,7 @@ void	play_turn(game_board_t *board)
 {
 	p_choice_t	choice = {0, 0};
 
-	while (choice.matches == 0 || choice.matches == -1) {
-		get_input_choice(&choice, board);
-	}
+	get_input_choice(&choice, board);
 	update_board_with(board, &choice);
 }
 

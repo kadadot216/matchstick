@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** main.c
-** File description:
-** Main file for Matchstick
-*/
-
 #include <stdlib.h>
 #include "my.h"
 #include "prototypes.h"

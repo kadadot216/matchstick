@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for my_runner
-##
-
 CC		=	gcc -W -Wall -Wextra
 DBCC		=	gcc -g
 RM		=	rm -f
@@ -54,6 +47,7 @@ SRC		=	src/board/build.c		\
 			src/game/user_prompt.c		\
 			src/game/checking.c		\
 			src/game/print_err_functs.c	\
+			src/game/value_checks.c		\
 			src/parsing.c
 			
 MAIN		=	src/main.c
