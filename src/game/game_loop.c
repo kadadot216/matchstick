@@ -20,11 +20,15 @@ void	get_input_choice(p_choice_t *c, game_board_t *b)
 	c->matches = get_matches_input(b, c->line);
 }
 
-void	play_turn(game_board_t *board)
+void	play_turn(game_board_t *board, turn_type_t type)
 {
 	p_choice_t	choice = {0, 0};
 
-	get_input_choice(&choice, board);
+	if (type == PLAYER) {
+		get_input_choice(&choice, board);
+	} else if (type == AI) {
+		ai_get_input_choice(&choice, board);
+	}
 	update_board_with(board, &choice);
 }
 
@@ -42,10 +46,10 @@ void	play_game(game_board_t *board)
 		display_board(board);
 		if (is_odd(turn)) {
 			my_putstr_fd(1, "Your turn:\n");
-			play_turn(board);
+			play_turn(board, PLAYER);
 		} else {
 			my_putstr_fd(1, "AI's turn...\n");
-			play_turn(board);
+			play_turn(board, AI);
 		}
 		check_for_win_condition();
 		turn++;

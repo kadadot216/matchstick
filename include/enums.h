@@ -28,4 +28,9 @@ enum	prompt_error_e {
 	PROMPT_OK = 42
 };
 
+enum	turn_type_e {
+	PLAYER,
+	AI
+};
+
 #endif
