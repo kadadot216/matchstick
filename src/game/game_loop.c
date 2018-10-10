@@ -34,41 +34,52 @@ void	play_turn(game_board_t *board, turn_type_t type, int ai_lvl)
 	update_board_with(board, &choice, type);
 }
 
-game_status_t	check_for_win_condition(game_board_t *board, uint_t turn)
+int	is_board_clear(game_board_t *board)
 {
 	uint_t	i = 0;
 
 	while (i < board->max_lines) {
 		if (board->remmatches_atl[i] != 0) {
-			return (RUNNING);
+			return (0);
 		}
 		i++;
 	}
-	if (is_odd(turn)) {
+	return (1);
+}
+
+game_status_t	check_for_win_condition(game_board_t *board, turn_type_t tt)
+{
+	if (is_board_clear(board) && tt == PLAYER) {
 		return (AI_WON);
-	} else if (!is_odd(turn)) {
+	} else if (is_board_clear(board) && tt == AI) {
 		return (PLAYER_WON);
 	}
 	return (RUNNING);
 }
 
+void	display_turn_msg(turn_type_t tt)
+{
+	if (tt == PLAYER)
+		my_putstr_fd(1, "\nYour turn:\n");
+	else if (tt == AI)
+		my_putstr_fd(1, "\nAI's turn...\n");
+}
+
 game_status_t	play_game(game_board_t *board)
 {
 	game_status_t	status = RUNNING;	
-	uint_t	turn = 1;
+	turn_type_t	turn_of = 0;
+	uint_t	turn = 0;
 	int	ai_lvl = 0;
 
 	ai_lvl = rand_iv(0, 1);
+	display_board(board);
 	while (status == RUNNING) {
+		turn_of = (turn % 2);
+		display_turn_msg(turn_of);
+		play_turn(board, turn_of, ai_lvl);
 		display_board(board);
-		if (is_odd(turn)) {
-			my_putstr_fd(1, "Your turn:\n");
-			play_turn(board, PLAYER, ai_lvl);
-		} else {
-			my_putstr_fd(1, "AI's turn...\n");
-			play_turn(board, AI, ai_lvl);
-		}
-		status = check_for_win_condition(board, turn);
+		status = check_for_win_condition(board, turn_of);
 		turn++;
 	}
 	print_loss_msg(status);

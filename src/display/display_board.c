@@ -31,6 +31,6 @@ int	display_board(game_board_t *board)
 		j++;
 	}
 	display_board_line(board);
-	my_putchar_fd(1, '\n');
+	//my_putchar_fd(1, '\n');
 	return (0);
 }
