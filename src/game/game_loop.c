@@ -16,8 +16,9 @@
 
 void	get_input_choice(p_choice_t *c, game_board_t *b)
 {
-	while (c->matches <= 0) {
+	while (c->matches == 0 || c->matches == -1) {
 		c->line = get_line_input(b);
+		c->line--;
 		c->matches = get_matches_input(b, c->line);
 	}
 }

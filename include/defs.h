@@ -8,6 +8,8 @@
 #ifndef __MATCHSTICK_DEFS_H__
 #define __MATCHSTICK_DEFS_H__
 
-#define NB_LINES_DEFAULT	(4)
+#include "gnl_simplified.h"
+
+#define	ERR_EOF	(READ_ERROR)
 
 #endif
