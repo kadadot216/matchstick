@@ -10,6 +10,7 @@
 #include "prototypes.h"
 #include "types.h"
 #include "parsing.h"
+#include <time.h>
 
 int	main(int ac, char **av)
 {
@@ -18,6 +19,7 @@ int	main(int ac, char **av)
 	int	nb_lines = 0;
 	int	match_limit = 0;
 
+	srand(time(NULL));
 	if (ac > 3 || ac < 3) {
 		print_help_msg(av[0]);
 		return (84);

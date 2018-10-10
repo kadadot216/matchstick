@@ -22,14 +22,14 @@ void	get_input_choice(p_choice_t *c, game_board_t *b)
 	}
 }
 
-void	play_turn(game_board_t *board, turn_type_t type)
+void	play_turn(game_board_t *board, turn_type_t type, int ai_lvl)
 {
 	p_choice_t	choice = {0, 0};
 
 	if (type == PLAYER) {
 		get_input_choice(&choice, board);
 	} else if (type == AI) {
-		ai_get_input_choice(&choice, board);
+		ai_get_input_choice(&choice, board, ai_lvl);
 	}
 	update_board_with(board, &choice, type);
 }
@@ -56,15 +56,17 @@ game_status_t	play_game(game_board_t *board)
 {
 	game_status_t	status = RUNNING;	
 	uint_t	turn = 1;
+	int	ai_lvl = 0;
 
+	ai_lvl = rand_iv(0, 1);
 	while (status == RUNNING) {
 		display_board(board);
 		if (is_odd(turn)) {
 			my_putstr_fd(1, "Your turn:\n");
-			play_turn(board, PLAYER);
+			play_turn(board, PLAYER, ai_lvl);
 		} else {
 			my_putstr_fd(1, "AI's turn...\n");
-			play_turn(board, AI);
+			play_turn(board, AI, ai_lvl);
 		}
 		status = check_for_win_condition(board, turn);
 		turn++;

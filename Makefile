@@ -101,12 +101,12 @@ re: libfclean lib
 
 $(NAME): lib
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(MAIN) $(SRC) $(LIBFLAG)
-re: clean fclean $(NAME)
+re: clean cclean $(NAME)
 
 clean:
 	$(RM) $(OBJ)
 
-fclean:	clean
+cclean:	clean
 	$(RM) $(HDTGR)
 	$(RM) $(LIBTGR)
 	$(RM) $(NAME)
@@ -128,4 +128,4 @@ tclean:
 	$(RM) *.gc*
 	$(RM) $(TEST_NAME)
 
-cclean: tclean gclean fclean libfclean
+fclean: tclean gclean cclean libfclean
