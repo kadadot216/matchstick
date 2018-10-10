@@ -12,7 +12,7 @@ void	print_loss_msg(game_status_t status)
 {
 	if (status == PLAYER_WON) {
 		my_putstr_fd(1, "I lost... snif... but"
-			"I'll get you next time!!\n");
+			" I'll get you next time!!\n");
 	} else if (status == AI_WON) {
 		my_putstr_fd(1, "You lost, too bad...\n");
 	}

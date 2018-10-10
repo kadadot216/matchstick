@@ -9,6 +9,12 @@
 #include "types.h"
 #include "my.h"
 
+void	display_board_line(game_board_t *board)
+{
+	my_putcharx_fd(1, '*', (board->max_width + 2));
+	my_putchar_fd(1, '\n');
+}
+
 int	display_board(game_board_t *board)
 {
 	uint_t	j = 0;
@@ -16,8 +22,7 @@ int	display_board(game_board_t *board)
 	if (board == NULL) {
 		return (-1);
 	}
-	my_putcharx_fd(1, '*', (board->max_width + 2));
-	my_putchar_fd(1, '\n');
+	display_board_line(board);
 	while (j < board->max_lines) {
 		my_putchar_fd(1, '*');
 		my_putstr_fd(1, board->display[j]);
@@ -25,7 +30,7 @@ int	display_board(game_board_t *board)
 		my_putchar_fd(1, '\n');
 		j++;
 	}
-	my_putcharx_fd(1, '*', (board->max_width + 2));
-	my_putstr_fd(1, "\n\n");
+	display_board_line(board);
+	my_putchar_fd(1, '\n');
 	return (0);
 }

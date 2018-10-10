@@ -9,10 +9,9 @@
 
 int	my_getnbr(char const *str)
 {
-	int	sum;
-	char	sign;
+	int	sum = 0;
+	char	sign = 0;
 
-	sum = 0;
 	while (*str == '-' || *str == '+') {
 		sign = *str;
 		str++;

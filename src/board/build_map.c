@@ -18,7 +18,7 @@ static void	map_board_line(char *line, uint_t width, uint_t nb_sticks)
 		line[i] = ' ';
 		i++;
 	}
-	while (i < start_offset + nb_sticks) {
+	while (i < (start_offset + nb_sticks)) {
 		line[i] = '|';
 		i++;
 	}
@@ -26,7 +26,6 @@ static void	map_board_line(char *line, uint_t width, uint_t nb_sticks)
 		line[i] = ' ';
 		i++;
 	}
-	line[i] = '\0';
 }
 
 game_board_t	*map_board_display(game_board_t *b)
@@ -37,13 +36,14 @@ game_board_t	*map_board_display(game_board_t *b)
 		my_putstr_fd(2, "Error during display creation.\n");
 		return (NULL);
 	}
-	b->display = malloc(sizeof(char *) * (b->max_lines + 1));
+	b->display = malloc(sizeof(char *) * b->max_lines);
 	while (j < b->max_lines) {
-		b->display[j] = malloc(sizeof(char) * b->max_width);
+		b->display[j] = malloc(sizeof(char) * (b->max_width + 1));
+		my_memset(b->display[j], '\0', b->max_width);
 		map_board_line(b->display[j], b->max_width,
 			b->remmatches_atl[j]);
+		b->display[j][b->max_width] = '\0';
 		j++;
 	}
-	b->display[j] = NULL;
 	return (b);
 }
