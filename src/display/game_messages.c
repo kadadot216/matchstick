@@ -12,7 +12,7 @@ void	print_loss_msg(game_status_t status)
 {
 	if (status == PLAYER_WON) {
 		my_putstr_fd(1, "I lost... snif... but"
-			" I'll get you next time!!\n");
+		" I'll get you next time!!\n");
 	} else if (status == AI_WON) {
 		my_putstr_fd(1, "You lost, too bad...\n");
 	}
@@ -37,4 +37,12 @@ void	print_help_msg(char *pname)
 	my_putstr_fd(1, "Usage:\n");
 	my_putstr_fd(1, pname);
 	my_putstr_fd(1, " <total number of line> <matchsticks limit>\n");
+}
+
+void	display_turn_msg(turn_type_t tt)
+{
+	if (tt == PLAYER)
+		my_putstr_fd(1, "\nYour turn:\n");
+	else if (tt == AI)
+		my_putstr_fd(1, "\nAI's turn...\n");
 }

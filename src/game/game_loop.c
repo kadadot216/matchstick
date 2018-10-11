@@ -68,17 +68,9 @@ game_status_t	check_for_win_condition(game_board_t *board, turn_type_t tt)
 	return (RUNNING);
 }
 
-void	display_turn_msg(turn_type_t tt)
-{
-	if (tt == PLAYER)
-		my_putstr_fd(1, "\nYour turn:\n");
-	else if (tt == AI)
-		my_putstr_fd(1, "\nAI's turn...\n");
-}
-
 game_status_t	play_game(game_board_t *board)
 {
-	game_status_t	status = RUNNING;	
+	game_status_t	status = RUNNING;
 	turn_type_t	turn_of = 0;
 	uint_t	turn = 0;
 	int	ai_lvl = 0;

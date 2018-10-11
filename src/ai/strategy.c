@@ -6,19 +6,8 @@
 */
 
 #include "types.h"
-#include <stdlib.h>
-
-int	random_iv(int min, int max)
-{
-	int	q = ((max + 1) - min);
-
-	return (min + (random() % q));
-}
-
-int	int_lower(int val1, int val2)
-{
-	return ((val1 < val2) ? val1 : val2);
-}
+#include "checking.h"
+#include "value_checks.h"
 
 int	airand_select_line(game_board_t *b)
 {
@@ -37,22 +26,9 @@ int	airand_select_nbmatches(game_board_t *b, uint_t sel_line)
 	int	lim = 0;
 	int	selected_matches = 0;
 
-	lim = int_lower(b->match_limit, b->remmatches_atl[sel_line]);
+	lim = int_lowest(b->match_limit, b->remmatches_atl[sel_line]);
 	selected_matches = random_iv(1, lim);
 	return (selected_matches);
-}
-
-int	check_for_last_line(game_board_t *b)
-{
-	uint_t	idx = 0;
-	int	lines_w_matches = 0;
-
-	while (idx < b->max_lines) {
-		if (b->remmatches_atl[idx] > 0)
-			lines_w_matches++;
-		idx++;
-	}
-	return ((lines_w_matches == 1) ? 1 : 0);
 }
 
 int	aisrs_select_nbmatches(game_board_t *b, uint_t sel_line)

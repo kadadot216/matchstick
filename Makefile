@@ -16,7 +16,7 @@ LIB_PATH	=	$(LIB_DIR)/$(LIB_NAMEDIR)
 
 LIB_HDPATH	=	$(LIB_PATH)/include
 
-LIB_HDSRC	=	my.h	\
+LIB_HDSRC	=	my.h			\
 			gnl_simplified.h
 
 LIB_HDS		=	$(addprefix $(LIB_HDPATH)/, $(LIB_HDSRC))
@@ -67,10 +67,12 @@ OBJ		+=	$(MAIN:.c=.o)
 
 #	Tests settings
 TEST_NAME	=	unit_tests
-TEST_SRC	=	tests/criterion.c
+TEST_SRC	=	tests/redirect_all_std.c	\
+			tests/board_creation.c		\
+			tests/player_move.c
 TEST_FLAGS	=	--coverage -lcriterion
 
-GDB_MAIN	=	src/main.c
+GDB_MAIN	=	$(MAIN)
 GDB_NAME	=	gdb.out
 
 
@@ -98,7 +100,6 @@ libfclean: libclean
 re: libfclean lib
 
 #	Program rules
-
 $(NAME): lib
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(NAME) $(MAIN) $(SRC) $(LIBFLAG)
 re: clean cclean $(NAME)
@@ -120,12 +121,13 @@ gclean:
 	$(RM) $(GDB_NAME)
 
 tests_run:
-	$(CC) $(CFLAGS) -o $(TEST_NAME) $(TEST_SRC) $(SRC) $(LIB_SRC)	\
-		$(TEST_FLAGS)
+	$(CC) $(CFLAGS) -I./tests/include -o $(TEST_NAME) $(TEST_SRC) $(SRC) \
+		$(LIB_SRC) $(TEST_FLAGS)
 	./$(TEST_NAME)
 
 tclean:
 	$(RM) *.gc*
+	$(RM) *vg*
 	$(RM) $(TEST_NAME)
 
 fclean: tclean gclean cclean libfclean

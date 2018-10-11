@@ -45,3 +45,16 @@ int	matches_are_valid(int value, uint_t remmatches, uint_t limit)
 	}
 	return (value);
 }
+
+int	check_for_last_line(game_board_t *b)
+{
+	uint_t	idx = 0;
+	int	lines_w_matches = 0;
+
+	while (idx < b->max_lines) {
+		if (b->remmatches_atl[idx] > 0)
+			lines_w_matches++;
+		idx++;
+	}
+	return ((lines_w_matches == 1) ? 1 : 0);
+}

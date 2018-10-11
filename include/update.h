@@ -11,6 +11,6 @@
 #include "types.h"
 
 void	update_board_with(game_board_t *board, p_choice_t *choice,
-		turn_type_t type);
+turn_type_t type);
 
 #endif

@@ -27,10 +27,10 @@ game_board_t	*set_empty_board(game_board_t *board)
 
 game_board_t	*init_board(int nb_lines, int match_limit)
 {
-	game_board_t	*board = NULL;	
+	game_board_t	*board = NULL;
 
 	if (nb_lines < 1 || match_limit < 1) {
-		my_putstr_fd(2, "Error: wrong nb of lines\n");
+		my_putstr_fd(2, "Error: WRONG OPTIONS\n");
 		return (NULL);
 	}
 	board = set_empty_board(board);

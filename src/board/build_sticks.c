@@ -11,7 +11,7 @@
 
 static void	compute_nb_sticks(uint_t *sticks_tab, uint_t max_lines)
 {
-	uint_t	line = 0;	
+	uint_t	line = 0;
 	uint_t	sticks = 1;
 
 	while (line < max_lines) {
