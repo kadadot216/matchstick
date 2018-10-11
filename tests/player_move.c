@@ -13,17 +13,17 @@
 void	test_update_board(game_board_t *b, p_choice_t *c)
 {
 	remove_sticks(&b->remmatches_atl[c->line], &c->matches);
-	remove_from_display(b->display[c->line], c->matches);
+	remove_from_display(b, c);
 }
 
 Test(player_move, select2from2, .init=redirect_all_std)
 {
 	game_board_t	*board = init_board(4, 2);
-	p_choice_t	choice = {(2 - 1), 2};
+	p_choice_t	choice = {1, 2};
 	char	*buffer =
 		"*********\n"
 		"*   |   *\n"
-		"*    |  *\n"
+		"*  |    *\n"
 		"* ||||| *\n"
 		"*|||||||*\n"
 		"*********\n\n";
@@ -61,7 +61,7 @@ Test(player_move, multiple_plays, .init=redirect_all_std)
 		"*********\n"
 		"*   |   *\n"
 		"*       *\n"
-		"*    || *\n"
+		"* ||    *\n"
 		"*|||||||*\n"
 		"*********\n\n";
 

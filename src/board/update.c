@@ -16,17 +16,18 @@ void	remove_sticks(uint_t *remmatches, int *matches)
 	*remmatches -= *matches;
 }
 
-void	remove_from_display(char *display_line, uint_t matches)
+void	remove_from_display(game_board_t *b, p_choice_t *c)
 {
-	uint_t	i = 0;
-	uint_t	removed = 0;
+	uint_t	i = (b->max_width - 1);
+	int	removed = 0;
+	char	*line = b->display[c->line];
 
-	while (display_line[i] == ' ' && display_line[i] != '\0') {
-		i++;
+	while (line[i] == ' ') {
+		i--;
 	}
-	while (removed < matches) {
-		display_line[i] = ' ';
-		i++;
+	while (removed < c->matches) {
+		line[i] = ' ';
+		i--;
 		removed++;
 	}
 }
@@ -34,6 +35,6 @@ void	remove_from_display(char *display_line, uint_t matches)
 void	update_board_with(game_board_t *b, p_choice_t *c, turn_type_t type)
 {
 	remove_sticks(&b->remmatches_atl[c->line], &c->matches);
-	remove_from_display(b->display[c->line], c->matches);
+	remove_from_display(b, c);
 	print_updated_board(c->matches, c->line, type);
 }
