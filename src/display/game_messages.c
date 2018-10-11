@@ -27,7 +27,7 @@ void	print_updated_board(uint_t matches, uint_t line, turn_type_t type)
 	}
 	my_putstr_fd(1, " removed ");
 	my_put_nbr_fd(1, matches);
-	my_putstr_fd(1, " from line ");
+	my_putstr_fd(1, " match(es) from line ");
 	my_put_nbr_fd(1, (line + 1));
 	my_putstr_fd(1, "\n");
 }
