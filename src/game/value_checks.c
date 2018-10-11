@@ -6,10 +6,13 @@
 */
 
 #include "types.h"
+#include "defs.h"
 #include "error_fcts.h"
 
 int	check_for_invalid_prompt(int value)
 {
+	if (value == ERR_EOF)
+		return (value);
 	if (value < 0) {
 		print_error_invalid_prompt();
 		return (-1);

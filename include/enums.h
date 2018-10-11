@@ -26,7 +26,9 @@ enum	prompt_error_e {
 enum	game_status_e {
 	RUNNING,
 	PLAYER_WON,
-	AI_WON
+	AI_WON,
+	EOF_QUIT,
+	ABORT = 0
 };
 
 enum	turn_type_e {

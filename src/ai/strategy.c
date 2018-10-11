@@ -8,11 +8,11 @@
 #include "types.h"
 #include <stdlib.h>
 
-int	rand_iv(int min, int max)
+int	random_iv(int min, int max)
 {
 	int	q = ((max + 1) - min);
 
-	return (min + (rand() % q));
+	return (min + (random() % q));
 }
 
 int	int_lower(int val1, int val2)
@@ -26,7 +26,7 @@ int	airand_select_line(game_board_t *b)
 	int	line_not_empty = 0;
 
 	while (!line_not_empty) {
-		b_line = rand_iv(0, (b->max_lines - 1));
+		b_line = random_iv(0, (b->max_lines - 1));
 		line_not_empty = b->remmatches_atl[b_line];
 	}
 	return (b_line);
@@ -38,7 +38,7 @@ int	airand_select_nbmatches(game_board_t *b, uint_t sel_line)
 	int	selected_matches = 0;
 
 	lim = int_lower(b->match_limit, b->remmatches_atl[sel_line]);
-	selected_matches = rand_iv(1, lim);
+	selected_matches = random_iv(1, lim);
 	return (selected_matches);
 }
 
