@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** strategy.c
-** File description:
-** Strategy related functions for ai
-*/
-
 #include "types.h"
 #include <stdlib.h>
 
@@ -61,7 +54,7 @@ int	aisrs_select_nbmatches(game_board_t *b, uint_t sel_line)
 	int	is_last_line = check_for_last_line(b);
 	int	sit_diff = (b->remmatches_atl[sel_line]);
 
-	if (is_last_line)
+	if (is_last_line && (b->remmatches_atl[sel_line] > 1))
 		sit_diff--;
 	if ((b->remmatches_atl[sel_line] <= b->match_limit))
 		selected_matches = sit_diff;

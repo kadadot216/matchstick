@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** update.c
-** File description:
-** Board update related functions
-*/
-
 #include "types.h"
 #include "messages.h"
 

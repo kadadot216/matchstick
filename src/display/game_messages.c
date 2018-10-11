@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** game_messages.c
-** File description:
-** Function for related game messages
-*/
-
 #include "stypes.h"
 #include "my.h"
 

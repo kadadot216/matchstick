@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** ms_free_strtab.c
-** File description:
-** Unset and free an strtab
-*/
-
 #include <stdlib.h>
 #include "stypes.h"
 #include "my.h"
