@@ -31,7 +31,7 @@ int	ai_select_line(game_board_t *b)
 	int	i_lowest = 0;
 
 	while (idx < b->max_lines) {
-		if (b->remmatches_atl[idx] < curr_lowest &&
+		if (b->remmatches_atl[idx] <= curr_lowest &&
 		b->remmatches_atl[idx] > 0) {
 			curr_lowest = b->remmatches_atl[idx];
 			i_lowest = idx;
