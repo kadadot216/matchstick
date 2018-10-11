@@ -13,7 +13,7 @@ int	parse_value(char *arg)
 {
 	int	value = -1;
 
-	if (arg == NULL || !my_str_isnum(arg)) {
+	if (arg == NULL || arg[0] == '\0' || !my_str_isnum(arg)) {
 		return (-1);
 	} else {
 		value = my_getnbr(arg);

@@ -41,8 +41,9 @@ void	print_help_msg(char *pname)
 
 void	display_turn_msg(turn_type_t tt)
 {
-	if (tt == PLAYER)
+	if (tt == PLAYER) {
 		my_putstr_fd(1, "\nYour turn:\n");
-	else if (tt == AI)
+	} else if (tt == AI) {
 		my_putstr_fd(1, "\nAI's turn...\n");
+	}
 }
