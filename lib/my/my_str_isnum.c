@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** my_str_isnum.c
-** File description:
-** Check wheter a string contains only numerals
-*/
-
 #include "my.h"
 
 int	my_char_isnum(char const c)

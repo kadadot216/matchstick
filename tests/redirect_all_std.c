@@ -1,11 +1,4 @@
-/*
-** EPITECH PROJECT, 2018
-** redirect_all_std.c
-** File description:
-** Test file for redirections
-*/
-
-#include "unit_testing.h"
+#include "./include/unit_testing.h"
 #include "structs.h"
 
 void	redirect_all_std(void)

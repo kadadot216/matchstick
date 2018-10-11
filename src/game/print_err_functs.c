@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** print_err_functs.c
-** File description:
-** Functions that returns error checking related messages
-*/
-
 #include "my.h"
 
 void	print_error_line_oor(void)

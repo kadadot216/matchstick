@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** checking.c
-** File description:
-** Checking related functions for game's logic
-*/
-
 #include "stypes.h"
 #include <stdlib.h>
 

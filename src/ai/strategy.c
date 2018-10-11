@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** strategy.c
-** File description:
-** Strategy related functions for ai
-*/
-
 #include "types.h"
 #include "checking.h"
 #include "value_checks.h"

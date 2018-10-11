@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** parsing.c
-** File description:
-** Parsing file
-*/
-
 #include <stdlib.h>
 #include "defs.h"
 #include "my.h"

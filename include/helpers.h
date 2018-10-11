@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** helpers.h
-** File description:
-** Header file for helpers functions prototypes
-*/
-
 #ifndef __MATCHSTICK_HELPERS_H__
 #define __MATCHSTICK_HELPERS_H__
 

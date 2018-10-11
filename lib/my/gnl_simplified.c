@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** gnl_simplified.c
-** File description:
-** Simplified gnl
-*/
-
 #include "gnl_simplified.h"
 #include <unistd.h>
 #include "my.h"

@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2018
-## Makefile
-## File description:
-## Makefile for my_runner
-##
-
 CC		=	gcc -W -Wall -Wextra
 DBCC		=	gcc -g
 RM		=	rm -f
@@ -74,15 +67,20 @@ TEST_FLAGS	=	--coverage -lcriterion
 
 GDB_MAIN	=	$(MAIN)
 GDB_NAME	=	gdb.out
-BONUS_MAIN	=	bonus/main.c
-BONUS_SRC	=	bonus/ai_random.c		\
-			bonus/bonus_game_loop.c		\
-			bonus/random_iv.c		\
-			bonus/select_difficulty.c
-BONUS_INCLUDE	=	-I./bonus/include
+EXT_MAIN	=	ext/main.c
+EXT_SRC	=		ext/ai_random.c			\
+			ext/ext_game_loop.c		\
+			ext/print.c			\
+			ext/random_iv.c			\
+			ext/my_strcmp.c			\
+			ext/my_strdup.c			\
+			ext/my_str_isalpha.c		\
+			ext/my_strlowcase.c		\
+			ext/select_difficulty.c
+EXT_INCLUDE	=	-I./ext/include
 
 
-.PHONY: tclean gclean fclean lclean lfclean $(NAME)
+.PHONY: ext tclean gclean fclean lclean lfclean $(NAME)
 
 all:	$(NAME)
 
@@ -136,11 +134,11 @@ tclean:
 	$(RM) *vg*
 	$(RM) $(TEST_NAME)
 
-bonus: lib
-	$(CC) $(CFLAGS) $(BONUS_INCLUDE) $(LDFLAGS) -o $(NAME) $(BONUS_MAIN) \
-		$(SRC) $(BONUS_SRC) $(LIBFLAG)
+ext: lib
+	$(CC) -g $(CFLAGS) $(EXT_INCLUDE) $(LDFLAGS) -o $(NAME)	\
+		$(EXT_MAIN) $(SRC) $(EXT_SRC) $(LIBFLAG)
 
 bclean: cclean libfclean
-	$(RM) ./bonus/*.o
+	$(RM) ./ext/*.o
 
 fclean: tclean gclean cclean libfclean

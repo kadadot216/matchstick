@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** value_checks.h
-** File description:
-** Header file for value_checks.c
-*/
-
 #ifndef __MATCHSTICK_VALUE_CHECKS_H__
 #define __MATCHSTICK_VALUE_CHECKS_H__
 

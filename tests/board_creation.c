@@ -1,19 +1,11 @@
-/*
-** EPITECH PROJECT, 2018
-** board_creation.c
-** File description:
-** UT for testing board creation and display
-*/
-
-#include "unit_testing.h"
+#include "./include/unit_testing.h"
 #include "structs.h"
 #include "prototypes.h"
 
 Test(init_board, board_creation1, .init=redirect_all_std)
 {
 	game_board_t	*board = init_board(4, 2);
-	char	*buffer =
-		"*********\n"
+	char	*buffer = "*********\n"
 		"*   |   *\n"
 		"*  |||  *\n"
 		"* ||||| *\n"
@@ -29,8 +21,7 @@ Test(init_board, board_creation1, .init=redirect_all_std)
 Test(init_board, board_creation2, .init=redirect_all_std)
 {
 	game_board_t	*board = init_board(10, 5);
-	char	*buffer =
-		"*********************\n"
+	char	*buffer = "*********************\n"
 		"*         |         *\n"
 		"*        |||        *\n"
 		"*       |||||       *\n"

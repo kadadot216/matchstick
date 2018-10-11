@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** ai.h
-** File description:
-** Header file for ai.c
-*/
-
 #ifndef __MATCHSTICK_AI_H__
 #define __MATCHSTICK_AI_H__
 

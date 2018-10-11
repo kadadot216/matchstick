@@ -1,14 +1,7 @@
-/*
-** EPITECH PROJECT, 2018
-** bonus_game_loop.c
-** File description:
-** Modified game_loop for bonus
-*/
-
 #include "ai.h"
 #include "checking.h"
 #include "defs.h"
-#include "./include/bonus.h"
+#include "./include/ext.h"
 #include "messages.h"
 #include "my.h"
 #include "prototypes.h"
@@ -17,7 +10,7 @@
 #include "user_prompt.h"
 
 
-game_status_t	bonus_play_turn(game_board_t *board, turn_type_t type,
+game_status_t	ext_play_turn(game_board_t *board, turn_type_t type,
 ai_strat_t ai_strategy)
 {
 	p_choice_t	choice = {0, 0};
@@ -35,7 +28,7 @@ ai_strat_t ai_strategy)
 	return (RUNNING);
 }
 
-game_status_t	bonus_play_game(game_board_t *board, int diff_choice)
+game_status_t	ext_play_game(game_board_t *board, int diff_choice)
 {
 	game_status_t	status = RUNNING;
 	turn_type_t	turn_of = 0;
@@ -48,7 +41,7 @@ game_status_t	bonus_play_game(game_board_t *board, int diff_choice)
 	while (status == RUNNING) {
 		turn_of = (turn % 2);
 		display_turn_msg(turn_of);
-		status = bonus_play_turn(board, turn_of, ai_lvl[diff_choice]);
+		status = ext_play_turn(board, turn_of, ai_lvl[diff_choice]);
 		if (status == EOF_QUIT) {
 			return (ABORT);
 		}

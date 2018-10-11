@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2018
-** ai_random.c
-** File description:
-** AI Random strategy
-*/
-
 #include "ai.h"
 #include "checking.h"
 
