@@ -17,7 +17,8 @@ int	ai_select_nbmatches(game_board_t *b, uint_t sel_line)
 
 	if (is_last_line && (b->remmatches_atl[sel_line] > 1)) {
 		sit_diff--;
-	} else if ((b->remmatches_atl[sel_line] <= b->match_limit)) {
+	}
+	if ((b->remmatches_atl[sel_line] <= b->match_limit)) {
 		selected_matches = sit_diff;
 	} else {
 		selected_matches = b->match_limit;
