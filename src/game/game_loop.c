@@ -29,7 +29,7 @@ game_status_t	get_input_choice(p_choice_t *c, game_board_t *b)
 	return (RUNNING);
 }
 
-game_status_t	play_turn(game_board_t *board, turn_type_t type, int ai_lvl)
+game_status_t	play_turn(game_board_t *board, turn_type_t type)
 {
 	p_choice_t	choice = {0, 0};
 	game_status_t	prompt_ok = RUNNING;
@@ -37,7 +37,7 @@ game_status_t	play_turn(game_board_t *board, turn_type_t type, int ai_lvl)
 	if (type == PLAYER) {
 		prompt_ok = get_input_choice(&choice, board);
 	} else if (type == AI) {
-		ai_get_input_choice(&choice, board, ai_lvl);
+		ai_get_input_choice(&choice, board);
 	}
 	if (prompt_ok == EOF_QUIT)
 		return (prompt_ok);
@@ -73,14 +73,12 @@ game_status_t	play_game(game_board_t *board)
 	game_status_t	status = RUNNING;
 	turn_type_t	turn_of = 0;
 	uint_t	turn = 0;
-	int	ai_lvl = 0;
 
-	ai_lvl = random_iv(0, 1);
 	display_board(board);
 	while (status == RUNNING) {
 		turn_of = (turn % 2);
 		display_turn_msg(turn_of);
-		status = play_turn(board, turn_of, ai_lvl);
+		status = play_turn(board, turn_of);
 		if (status == EOF_QUIT)
 			return (ABORT);
 		display_board(board);
