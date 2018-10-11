@@ -74,6 +74,12 @@ TEST_FLAGS	=	--coverage -lcriterion
 
 GDB_MAIN	=	$(MAIN)
 GDB_NAME	=	gdb.out
+BONUS_MAIN	=	bonus/main.c
+BONUS_SRC	=	bonus/ai_random.c		\
+			bonus/bonus_game_loop.c		\
+			bonus/random_iv.c		\
+			bonus/select_difficulty.c
+BONUS_INCLUDE	=	-I./bonus/include
 
 
 .PHONY: tclean gclean fclean lclean lfclean $(NAME)
@@ -129,5 +135,12 @@ tclean:
 	$(RM) *.gc*
 	$(RM) *vg*
 	$(RM) $(TEST_NAME)
+
+bonus: lib
+	$(CC) $(CFLAGS) $(BONUS_INCLUDE) $(LDFLAGS) -o $(NAME) $(BONUS_MAIN) \
+		$(SRC) $(BONUS_SRC) $(LIBFLAG)
+
+bclean: cclean libfclean
+	$(RM) ./bonus/*.o
 
 fclean: tclean gclean cclean libfclean
