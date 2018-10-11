@@ -15,25 +15,26 @@ int	ai_select_nbmatches(game_board_t *b, uint_t sel_line)
 	int	is_last_line = check_for_last_line(b);
 	int	sit_diff = (b->remmatches_atl[sel_line]);
 
-	if (is_last_line && (b->remmatches_atl[sel_line] > 1))
+	if (is_last_line && (b->remmatches_atl[sel_line] > 1)) {
 		sit_diff--;
-	if ((b->remmatches_atl[sel_line] <= b->match_limit))
+	} else if ((b->remmatches_atl[sel_line] <= b->match_limit)) {
 		selected_matches = sit_diff;
-	else
+	} else {
 		selected_matches = b->match_limit;
+	}
 	return (selected_matches);
 }
 
 int	ai_select_line(game_board_t *b)
 {
+	uint_t	*rm = b->remmatches_atl;
 	uint_t	idx = 0;
 	uint_t	curr_lowest = b->max_width;
 	int	i_lowest = 0;
 
 	while (idx < b->max_lines) {
-		if (b->remmatches_atl[idx] <= curr_lowest &&
-		b->remmatches_atl[idx] > 0) {
-			curr_lowest = b->remmatches_atl[idx];
+		if (rm[idx] <= curr_lowest && rm[idx] > 0) {
+			curr_lowest = rm[idx];
 			i_lowest = idx;
 		}
 		idx++;
